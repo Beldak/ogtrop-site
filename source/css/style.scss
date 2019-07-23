@@ -1,0 +1,135 @@
+---
+---
+@charset "utf-8";
+
+// Imports
+@import "_mixins";
+
+// Breakpoints
+$breakpoints: (
+	"small": 600px,
+	"medium": 600px,
+	"large": 900px,
+	"huge": 1200px,
+);
+
+// Colors 
+$primary: #fd1a16; // Red
+$secondary: #82027e; // Purple
+$black: #000; // Black
+$white: #fff; // White
+
+//Padding
+$padding: 30px;
+
+// Fonts 
+$font-stack: (
+	"Sperwer",
+	"Century Gothic",
+	Arial,
+	sans-serif,
+);
+
+// Font declarations
+@include font-face("Sperwer", assets/fonts/sperwer-regular-web, normal, normal);
+@include font-face("Sperwer", assets/fonts/sperwer-light, 200, normal);
+@include font-face("Sperwer", assets/fonts/sperwer-bold-web, bold, normal);
+
+html {
+	font-family: $font-stack;
+	line-height: 1.4285;
+	background-color: $secondary;
+	text-color: $primary;
+}
+body {
+	margin: 0;
+}
+a {
+	color: $black;
+	text-decoration: none;
+	&:hover {
+		color: $primary;
+	}
+	&:active {
+		color: $primary;
+	}
+}
+
+#header {
+	display: flex;
+	flex-wrap: wrap;
+	padding: $padding;
+	padding-bottom: $padding/2;
+	@include respond-to(small) { flex-wrap: nowrap; }
+	.maze {
+		width: 35%;
+		line-height: 0;
+		@include respond-to(small) { width: 60px; }
+	}
+	h1 {
+		position: relative;
+		top: 0.25em;
+		display: block;
+		width: 50%;
+		flex-grow: 1;
+		margin: 0 0 0 0.5em;
+		font-weight: 200;
+		font-size: 14vw;
+		line-height: 0.8;
+		color: $primary;
+		@include respond-to(small) {
+			font-size: 28px;
+			width: 200px;
+		}
+	}
+	p {
+		display: block;
+		padding-left: 0.125em;
+		font-size: 6.65vw;
+		color: $primary;
+		@include respond-to(small) { 
+			width: 120px;
+			font-size: 14px;
+		}
+	}
+}
+
+#container {
+	max-width: 1000px;
+	height: auto;
+	margin: 0 auto;
+	background-color: $white;
+	.row {
+		display: block;
+		margin-top: $padding/2;
+		height: 200px;
+		overflow: hidden;
+		background-repeat: none;
+		background-position: 50% 30%;
+	}
+}
+
+footer {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	padding: $padding 0;
+	background-color: $secondary;
+	color: $white;
+	.column {
+		font-size: 1em;
+		padding: 0 $padding;
+	}
+	a {
+		color: $white;
+		text-decoration: none;
+		&:hover {
+			color: $primary;
+		}
+		&:active {
+			color: $primary;
+		}
+	}
+}
+
+
