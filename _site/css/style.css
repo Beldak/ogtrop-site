@@ -1,0 +1,101 @@
+@font-face {
+  font-family: "Sperwer";
+  font-style: normal;
+  font-weight: normal;
+  src: url("assets/fonts/sperwer-regular-web.eot?") format("eot"), url("assets/fonts/sperwer-regular-web.woff2") format("woff2"), url("assets/fonts/sperwer-regular-web.woff") format("woff"), url("assets/fonts/sperwer-regular-web.ttf") format("truetype"), url("assets/fonts/sperwer-regular-web.svg#Sperwer") format("svg"); }
+@font-face {
+  font-family: "Sperwer";
+  font-style: normal;
+  font-weight: 200;
+  src: url("assets/fonts/sperwer-light.eot?") format("eot"), url("assets/fonts/sperwer-light.woff2") format("woff2"), url("assets/fonts/sperwer-light.woff") format("woff"), url("assets/fonts/sperwer-light.ttf") format("truetype"), url("assets/fonts/sperwer-light.svg#Sperwer") format("svg"); }
+@font-face {
+  font-family: "Sperwer";
+  font-style: normal;
+  font-weight: bold;
+  src: url("assets/fonts/sperwer-bold-web.eot?") format("eot"), url("assets/fonts/sperwer-bold-web.woff2") format("woff2"), url("assets/fonts/sperwer-bold-web.woff") format("woff"), url("assets/fonts/sperwer-bold-web.ttf") format("truetype"), url("assets/fonts/sperwer-bold-web.svg#Sperwer") format("svg"); }
+html {
+  font-family: "Sperwer", "Century Gothic", Arial, sans-serif;
+  line-height: 1.4285;
+  background-color: #82027e;
+  text-color: #fd1a16; }
+
+body {
+  margin: 0; }
+
+a {
+  color: #000;
+  text-decoration: none; }
+  a:hover {
+    color: #fd1a16; }
+  a:active {
+    color: #fd1a16; }
+
+#header {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px;
+  padding-bottom: 15px; }
+  @media only screen and (min-width: 600px) {
+    #header {
+      flex-wrap: nowrap; } }
+  #header .maze {
+    width: 35%;
+    line-height: 0; }
+    @media only screen and (min-width: 600px) {
+      #header .maze {
+        width: 60px; } }
+  #header h1 {
+    position: relative;
+    top: 0.25em;
+    display: block;
+    width: 50%;
+    flex-grow: 1;
+    margin: 0 0 0 0.5em;
+    font-weight: 200;
+    font-size: 14vw;
+    line-height: 0.8;
+    color: #fd1a16; }
+    @media only screen and (min-width: 600px) {
+      #header h1 {
+        font-size: 28px;
+        width: 200px; } }
+  #header p {
+    display: block;
+    padding-left: 0.125em;
+    font-size: 6.65vw;
+    color: #fd1a16; }
+    @media only screen and (min-width: 600px) {
+      #header p {
+        width: 120px;
+        font-size: 14px; } }
+
+#container {
+  max-width: 1000px;
+  height: auto;
+  margin: 0 auto;
+  background-color: #fff; }
+  #container .row {
+    display: block;
+    margin-top: 15px;
+    height: 200px;
+    overflow: hidden;
+    background-repeat: none;
+    background-position: 50% 30%; }
+
+footer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  padding: 30px 0;
+  background-color: #82027e;
+  color: #fff; }
+  footer .column {
+    font-size: 1em;
+    padding: 0 30px; }
+  footer a {
+    color: #fff;
+    text-decoration: none; }
+    footer a:hover {
+      color: #fd1a16; }
+    footer a:active {
+      color: #fd1a16; }
