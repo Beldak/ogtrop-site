@@ -58,8 +58,11 @@ a {
 #header {
 	display: flex;
 	flex-wrap: wrap;
-	padding: $padding 0 $padding/2 $padding;
-	@include respond-to(small) { flex-wrap: nowrap; }
+	padding: $padding 0 $padding/2 $padding/2;
+	@include respond-to(small) { 
+		padding: $padding 0 $padding/2 $padding;
+		flex-wrap: nowrap;	
+	}
 	.maze {
 		width: 35%;
 		line-height: 0;
@@ -116,17 +119,22 @@ footer {
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: flex-end;
-	padding: $padding 0;
+	padding: $padding/2 0;
 	background-color: $secondary;
 	color: $white;
+	@include respond-to(small) {
+		padding: $padding 0;
+	}
 	.column {
-		width: calc(50% - 60px);
-		font-size: 16px;
-		padding: 0 $padding 0 $padding;
+		width: calc(50% - 15px);
+		font-size: 14px;
+		padding: 0;
 		@include respond-to(small) {
-			font-size: 14px;
 			width: 160px;
 			padding: 0 0 0 $padding;
+		}
+		&:last-child {
+			width: 50%;
 		}
 	}
 	a {
