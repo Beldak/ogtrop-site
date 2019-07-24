@@ -73,7 +73,7 @@ a {
 		flex-grow: 1;
 		margin: 0 0 0 0.5em;
 		font-weight: 200;
-		font-size: 14vw;
+		font-size: 15vw;
 		line-height: 0.8;
 		color: $primary;
 		@include respond-to(small) {
@@ -84,7 +84,8 @@ a {
 	p {
 		display: block;
 		padding: 0;
-		font-size: 6.65vw;
+		margin-bottom: 0;
+		font-size: 7.1vw;
 		color: $primary;
 		@include respond-to(small) { 
 			width: 160px;
@@ -101,10 +102,13 @@ a {
 	.row {
 		display: block;
 		margin-top: $padding/2;
-		height: 200px;
+		height: 300px;
 		overflow: hidden;
 		background-repeat: none;
 		background-position: 50% 30%;
+		@include respond-to(small) { 
+			height: 200px;
+		}
 	}
 }
 
@@ -116,9 +120,14 @@ footer {
 	background-color: $secondary;
 	color: $white;
 	.column {
-		width: 160px;
-		font-size: 14px;
-		padding: 0 0 0 $padding;
+		width: calc(50% - 60px);
+		font-size: 16px;
+		padding: 0 $padding 0 $padding;
+		@include respond-to(small) {
+			font-size: 14px;
+			width: 160px;
+			padding: 0 0 0 $padding;
+		}
 	}
 	a {
 		color: $white;
