@@ -28,6 +28,9 @@ dest: _site
 markdown: kramdown
 plugins:
   - jekyll-feed
+collections:
+  elements:
+    output: false
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

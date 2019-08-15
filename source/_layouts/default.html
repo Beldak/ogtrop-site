@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
+	  <div id="wrapper">
 	  <div id="container">
 		  <div id="header">
 				<div class="maze">
@@ -19,13 +20,11 @@
 				<h1>van<br>ogtrop</h1>
 				<p>juridisch landgoedbeheer</p>
 			</div> <!-- #header -->	  		    
-	    <h1>{{ page.title }}</h1>
-	    
-	      {{ content }}
-				
+				{% include content.html %}
 	    <footer>
 	      {% include footer.html %}
 	    </footer>
-    </div> <!-- #container -->	
+    </div> <!-- #container -->
+	  </div> <!-- #wrapper -->
   </body>
 </html>

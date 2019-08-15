@@ -12,11 +12,10 @@ $breakpoints: (
 	"large": 900px,
 	"huge": 1200px,
 );
-
 // Colors 
 $primary: #fd1a16; // Red
 $secondary: #82027e; // Purple
-$black: #000; // Black
+$black: rgba(20, 20, 20, 1); // Black
 $white: #fff; // White
 
 //Padding
@@ -35,15 +34,35 @@ $font-stack: (
 @include font-face("Sperwer", assets/fonts/sperwer-light, 200, normal);
 @include font-face("Sperwer", assets/fonts/sperwer-bold-web, bold, normal);
 
+* {
+	box-sizing: border-box;
+}
 html {
+	font-size: 16px;
 	font-family: $font-stack;
 	line-height: 1.4285;
 	background-color: $secondary;
 	text-color: $primary;
 }
+
 body {
 	margin: 0;
+	background-color: $secondary;
 }
+
+
+/* END text styling */
+h2 {
+	font-size: 24px;
+	font-weight: normal;
+	color: $secondary;
+	margin: 0 0 0.625rem 0;
+}
+p {
+	color: $black;
+	margin: 0 0 1.375rem 0;
+}
+
 a {
 	color: $black;
 	text-decoration: none;
@@ -55,90 +74,134 @@ a {
 	}
 }
 
+p.quote {
+}
+/* END text styling */
+
+/* header */
 #header {
+	max-width: 1000px;
+	margin: 0 auto;
 	display: flex;
-	flex-wrap: wrap;
-	padding: $padding 0 $padding/2 $padding/2;
-	@include respond-to(small) { 
-		padding: $padding 0 $padding/2 $padding;
-		flex-wrap: nowrap;	
-	}
+	flex-wrap: nowrap;
+	padding: $padding;
+	background-color: $white;
 	.maze {
-		width: 35%;
 		line-height: 0;
-		@include respond-to(small) { width: 60px; }
+		width: 60px;
 	}
 	h1 {
 		position: relative;
 		top: 0.25em;
 		display: block;
-		width: 50%;
 		flex-grow: 1;
 		margin: 0 0 0 0.5em;
 		font-weight: 200;
-		font-size: 15vw;
 		line-height: 0.8;
 		color: $primary;
-		@include respond-to(small) {
-			font-size: 28px;
-			width: 200px;
-		}
+		font-size: 28px;
+		width: 200px;
 	}
 	p {
 		display: block;
 		padding: 0;
-		margin-bottom: 0;
-		font-size: 7.1vw;
+		margin: 0.75em 0 0 0;
 		color: $primary;
-		@include respond-to(small) { 
-			width: 160px;
-			font-size: 14px;
-		}
+		width: 130px;
+		font-size: 14px;
 	}
 }
+/* END header */
 
+/* content */
 #container {
-	max-width: 1000px;
-	height: auto;
-	margin: 0 auto;
-	background-color: $white;
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+	perspective: 3px;
 	.row {
-		display: block;
-		margin-top: $padding/2;
-		height: 300px;
-		overflow: hidden;
-		background-repeat: none;
-		background-position: 50% 30%;
-		@include respond-to(small) { 
-			height: 200px;
+		margin: 0 auto;
+		max-width: 1000px;
+		position: relative;
+		height: auto;
+		padding: $padding*0.8 $padding $padding/2 $padding;
+	}
+	.row.content {
+		height: auto;
+		background-color: $white;
+		.columns {
+			column-count: 2;
+			column-width: 300px;
+			column-fill: balance;
+			column-gap: $padding;
+			hyphens: auto;
+			word-wrap: break-word;
+		  section {
+				break-inside: avoid;
+			}
 		}
 	}
+	.row.image {
+		height: 200px;
+		position: relative;
+		overflow-x: hidden;
+		overflow-y: hidden;
+	}
+
 }
 
+.parallax {
+	&:after {
+		content: " ";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		height: 100vh;
+		transform: translateZ(-1px) scale(1.5);
+		background-size: 120%;
+		z-index: -1;
+		background-repeat: no-repeat;
+		background-color: $white;
+	}
+}
+.parallax.last {
+	&:after {
+		transform: translateZ(-1px) translateY(150px) scale(1.5);
+	}
+}
+.maze1::after { background-image: url('../images/maze1.png'); }
+.maze2::after { background-image: url('../images/maze2.png'); }
+.maze3::after { background-image: url('../images/maze3.png'); }
+/* END content */
+
+/* footer */
 footer {
+	max-width: 1000px;
+	margin: 0 auto;
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: flex-end;
 	padding: $padding/2;
-	background-color: $secondary;
 	color: $white;
 	@include respond-to(small) {
 		padding: $padding 0;
 	}
 	.column {
 		width: calc(50% - 15px);
-		max-width: 160px;
+		width: 175px;
 		font-size: 14px;
 		padding: 0;
 		@include respond-to(small) {
-			width: 160px;
+			width: 175px;
 			padding: 0 0 0 $padding;
 		}
 		&:last-child {
 			width: 50%;
 			padding-left: $padding/2;
 			@include respond-to(small) {
-				width: 160px;
+				width: 175px;
 				padding-left: $padding;
 			}
 		}
@@ -154,5 +217,4 @@ footer {
 		}
 	}
 }
-
-
+/* END footer */

@@ -4,10 +4,3 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: default
 ---
-
-{% for image in site.static_files %}
-	{% if image.path contains 'images/' %}
-		<div class="row" style="background-image: url('{{ site.baseurl }}{{ image.path }}');">
-	  </div> <!-- .row -->
-	{% endif %}
-{% endfor %}
