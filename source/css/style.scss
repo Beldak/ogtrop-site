@@ -52,7 +52,6 @@ body {
 	background-color: $secondary;
 }
 
-
 /* END text styling */
 
 a {
@@ -172,6 +171,7 @@ p.primary {
 	overflow-x: hidden;
 	overflow-y: auto;
 	perspective: 3px;
+	-webkit-overflow-scrolling: touch;
 }
 .row {
 	margin: 0 auto;
