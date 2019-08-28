@@ -7,6 +7,7 @@
 
 // Breakpoints
 $breakpoints: (
+	"tiny": 410px,
 	"small": 600px,
 	"medium": 820px,
 	"large": 900px,
@@ -124,7 +125,10 @@ p.primary {
 	margin: 0 auto;
 	display: flex;
 	flex-wrap: nowrap;
-	padding: $padding;
+	padding: $padding $padding/2 $padding $padding/2;
+	@include respond-to(tiny) {
+		padding: $padding;
+	}
 	background-color: $white;
 	.maze {
 		line-height: 0;
@@ -134,13 +138,16 @@ p.primary {
 		position: relative;
 		top: 0.25em;
 		display: block;
-		width: 200px;
+		width: 90px;
 		flex-grow: 1;
 		margin: 0 0 0 0.5em;
 		font-weight: 200;
 		line-height: 0.8;
 		color: $primary;
 		font-size: 28px;
+		@include respond-to(small) {
+			width: auto;
+		}
 	}
 	p {
 		display: block;
