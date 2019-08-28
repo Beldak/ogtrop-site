@@ -8,7 +8,7 @@
 // Breakpoints
 $breakpoints: (
 	"small": 600px,
-	"medium": 600px,
+	"medium": 820px,
 	"large": 900px,
 	"huge": 1200px,
 );
@@ -21,7 +21,8 @@ $white: #fff; // White
 //Padding
 $padding: 30px;
 
-// Fonts 
+// Fonts
+$font-size: 12px;
 $font-stack: (
 	"Sperwer",
 	"Century Gothic",
@@ -38,9 +39,9 @@ $font-stack: (
 	box-sizing: border-box;
 }
 html {
-	font-size: 16px;
+	font-size: $font-size;
 	font-family: $font-stack;
-	line-height: 1.4285;
+	line-height: 1.6;
 	background-color: $secondary;
 	text-color: $primary;
 }
@@ -52,16 +53,6 @@ body {
 
 
 /* END text styling */
-h2 {
-	font-size: 24px;
-	font-weight: normal;
-	color: $secondary;
-	margin: 0 0 0.625rem 0;
-}
-p {
-	color: $black;
-	margin: 0 0 1.375rem 0;
-}
 
 a {
 	color: $black;
@@ -74,9 +65,58 @@ a {
 	}
 }
 
-p.quote {
+h2 {
+	display: inline-block;
+	position: relative;
+	top: $font-size*-0.5;
+	margin: 0 0 $font-size 0;
+	font-size: $font-size;
+	font-weight: bold;
+	color: $secondary;
+	vertical-align: baseline;
 }
+p {
+	color: $secondary;
+	margin: 0 0 1.375rem 0;
+}
+p.secondary {
+	color: $secondary;
+}
+p.primary {
+	color: $primary;
+	a {
+		color: $primary;
+		text-decoration: none;
+		&:hover {
+			color: $secondary;
+		}
+		&:active {
+			color: $secondary;
+		}
+	}
+}
+
+
 /* END text styling */
+
+.icon {
+	position: relative;
+	margin: 0px 10px $font-size 0;
+	display: inline-block;
+	vertical-align: middle;
+	height: 35px;
+	width: 35px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.trees { background-image: url('assets/icons/trees.png'); }
+.pen { background-image: url('assets/icons/pen.png'); }
+.chatbubble { background-image: url('assets/icons/chatbubble.png'); }
+.door { background-image: url('assets/icons/door.png'); }
+.phone { background-image: url('assets/icons/phone.png'); }
+.handshake { background-image: url('assets/icons/handshake.png'); }
 
 /* header */
 #header {
@@ -94,21 +134,27 @@ p.quote {
 		position: relative;
 		top: 0.25em;
 		display: block;
+		width: 200px;
 		flex-grow: 1;
 		margin: 0 0 0 0.5em;
 		font-weight: 200;
 		line-height: 0.8;
 		color: $primary;
 		font-size: 28px;
-		width: 200px;
 	}
 	p {
 		display: block;
-		padding: 0;
+		width: 100px;
 		margin: 0.75em 0 0 0;
+		padding: 0;
 		color: $primary;
-		width: 130px;
-		font-size: 14px;
+		line-height: 1.333333;
+		@include respond-to(small) {
+			width: calc(50% - 30px);
+		}
+		@include respond-to(medium) {
+			width: 212.5px;
+		}
 	}
 }
 /* END header */
@@ -119,35 +165,75 @@ p.quote {
 	overflow-x: hidden;
 	overflow-y: auto;
 	perspective: 3px;
-	.row {
-		margin: 0 auto;
-		max-width: 1000px;
-		position: relative;
-		height: auto;
-		padding: $padding*0.8 $padding $padding/2 $padding;
-	}
-	.row.content {
-		height: auto;
-		background-color: $white;
-		.columns {
+}
+.row {
+	margin: 0 auto;
+	max-width: 1000px;
+	position: relative;
+	height: auto;
+	padding: $padding*0.8 $padding $padding/2 $padding;
+}
+.row.content {
+	height: auto;
+	background-color: $white;
+	.columns {
+		column-count: 1;
+		column-fill: balance;
+		column-gap: $padding;
+		hyphens: manual;
+		@include respond-to(small) {
 			column-count: 2;
-			column-width: 300px;
-			column-fill: balance;
-			column-gap: $padding;
-			hyphens: auto;
-			word-wrap: break-word;
-		  section {
-				break-inside: avoid;
+		}
+		@include respond-to(medium) {
+			column-count: 3;
+		}
+		@include respond-to(large) {
+			column-count: 4;
+		}
+
+		img {
+			margin-top: 0.55em;
+			width: 200px;
+			height: auto;
+			display: inline-block;
+		}
+		@include respond-to(small) {
+			.photo {
+				break-before: column;
 			}
 		}
+		section {
+			break-inside: avoid;
+			break-before: unset;
+			@include respond-to(medium) {
+				break-before: column;
+			}
+		}
+		.medium-hide {
+			display: none;
+			@include respond-to(large) {
+				display: block;
+			}
+		}	
 	}
-	.row.image {
-		height: 200px;
-		position: relative;
-		overflow-x: hidden;
-		overflow-y: hidden;
+}
+.row.image {
+	height: 210px;
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+.row.footer {
+	.columns {
+		column-count: 2;
+		@include respond-to(small) {
+			column-count: 2;
+			column-width: 200px;
+		}
+		@include respond-to(medium) {
+			column-count: 4;
+		}
 	}
-
 }
 
 .parallax {
@@ -160,10 +246,13 @@ p.quote {
 		left: 0;
 		height: 100vh;
 		transform: translateZ(-1px) scale(1.5);
-		background-size: 120%;
+		background-size: 140%;
 		z-index: -1;
 		background-repeat: no-repeat;
 		background-color: $white;
+		@include respond-to(small) {
+			background-size: 120%;
+		}
 	}
 }
 .parallax.last {
@@ -171,9 +260,11 @@ p.quote {
 		transform: translateZ(-1px) translateY(150px) scale(1.5);
 	}
 }
-.maze1::after { background-image: url('../images/maze1.png'); }
-.maze2::after { background-image: url('../images/maze2.png'); }
-.maze3::after { background-image: url('../images/maze3.png'); }
+.maze1::after { background-image: url('../images/maze1.jpg'); }
+.maze2::after { background-image: url('../images/maze2.jpg'); }
+.maze3::after { background-image: url('../images/maze3.jpg'); }
+.wedding::after { background-image: url('../images/wedding.jpg'); }
+.mansion::after { background-image: url('../images/mansion.jpg'); }
 /* END content */
 
 /* footer */
