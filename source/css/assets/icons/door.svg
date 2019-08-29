@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      .a{fill:none;stroke:#fd1a16;stroke-linecap:round;stroke-linejoin:round;stroke-width:3.6px}
+    </style>
+  </defs>
+  <path class="a" d="M51.8 15.8h27a1.81 1.81 0 0 1 1.8 1.8v64.8a1.81 1.81 0 0 1-1.8 1.8h-27"/>
+  <path class="a" d="M19.4 83.2a1.82 1.82 0 0 0 1.41 1.8l28.8 6.4a1.81 1.81 0 0 0 2.19-1.8V10.4a1.81 1.81 0 0 0-2.19-1.76L20.81 15a1.82 1.82 0 0 0-1.41 1.8z"/>
+  <circle class="a" cx="39.2" cy="50" r="5.4"/>
+</svg>

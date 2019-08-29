@@ -77,7 +77,7 @@ h2 {
 }
 p {
 	color: $secondary;
-	margin: 0 0 1.375rem 0;
+	margin: 0 0 1.6rem 0;
 }
 p.secondary {
 	color: $secondary;
@@ -98,25 +98,6 @@ p.primary {
 
 
 /* END text styling */
-
-.icon {
-	position: relative;
-	margin: 0px 10px $font-size 0;
-	display: inline-block;
-	vertical-align: middle;
-	height: 35px;
-	width: 35px;
-	background-size: contain;
-	background-position: center;
-	background-repeat: no-repeat;
-}
-
-.trees { background-image: url('assets/icons/trees.png'); }
-.pen { background-image: url('assets/icons/pen.png'); }
-.chatbubble { background-image: url('assets/icons/chatbubble.png'); }
-.door { background-image: url('assets/icons/door.png'); }
-.phone { background-image: url('assets/icons/phone.png'); }
-.handshake { background-image: url('assets/icons/handshake.png'); }
 
 /* header */
 #header {
@@ -199,7 +180,7 @@ p.primary {
 		}
 
 		img {
-			margin-top: 0.55em;
+			margin: $font-size*1.2 0 0 $font-size;
 			width: 200px;
 			height: auto;
 			display: inline-block;
@@ -264,9 +245,10 @@ p.primary {
 }
 .parallax.last {
 	&:after {
-		transform: translateZ(-1px) translateY(150px) scale(1.5);
+		transform: translateZ(-1px) translateY(50px) scale(1.5);
 	}
 }
+
 .maze1::after { background-image: url('../images/maze1.jpg'); }
 .maze2::after { background-image: url('../images/maze2.jpg'); }
 .maze3::after { background-image: url('../images/maze3.jpg'); }
@@ -277,6 +259,7 @@ p.primary {
 /* footer */
 footer {
 	max-width: 1000px;
+	height: $padding;
 	margin: 0 auto;
 	display: flex;
 	flex-wrap: nowrap;
@@ -316,3 +299,50 @@ footer {
 	}
 }
 /* END footer */
+
+/* SVG */
+.trees { background: url('assets/icons/trees.svg'); }
+.pen { background: url('assets/icons/pen.svg'); }
+.handshake { background: url('assets/icons/handshake.svg'); }
+
+.chatbubble { background: url('assets/icons/chatbubble.svg'); }
+.door { background: url('assets/icons/door.svg'); }
+.phone { background: url('assets/icons/phone.svg'); } 
+	
+.icon {
+	position: relative;
+	margin: 0px 10px $font-size 0;
+	display: inline-block;
+	vertical-align: middle;
+	height: 35px;
+	width: 35px;
+	background-size: contain;
+	background-position: top left;
+	background-repeat: no-repeat;
+	.svgicon { animation: spawn 2s ease 0.2s forwards; }
+}
+
+.svgicon {
+  fill: none;
+  stroke: #fd1a16;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3.6px;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+}
+
+
+.primary .svgicon {
+	stroke: $primary;
+}
+.secondary .svgicon {
+	stroke: $secondary;
+}
+
+@keyframes spawn {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
