@@ -16,6 +16,7 @@ $breakpoints: (
 // Colors 
 $primary: #fd1a16; // Red
 $secondary: #82027e; // Purple
+$tertiary: #44AF69; // Green
 $black: rgba(20, 20, 20, 1); // Black
 $white: #fff; // White
 
@@ -81,6 +82,9 @@ p {
 }
 p.secondary {
 	color: $secondary;
+}
+p.tertiary {
+	color: $tertiary;
 }
 p.primary {
 	color: $primary;
@@ -193,16 +197,24 @@ p.primary {
 		section {
 			break-inside: avoid;
 			break-before: unset;
-			@include respond-to(medium) {
+			@include respond-to(large) {
 				break-before: column;
 			}
 		}
-		.medium-hide {
+		div.medium-hide {
 			display: none;
-			@include respond-to(large) {
+			@include respond-to(medium) {
+				display: block;
+				min-height: 35px;
+				margin-bottom: 12px;
+			}
+		}
+		section.medium-hide {
+			display: none;
+			@include respond-to(medium) {
 				display: block;
 			}
-		}	
+		}
 	}
 }
 .row.image {
