@@ -105,46 +105,57 @@ p.primary {
 
 /* header */
 #header {
-	max-width: 1000px;
-	margin: 0 auto;
-	display: flex;
-	flex-wrap: nowrap;
-	padding: $padding $padding/2 $padding $padding/2;
-	@include respond-to(tiny) {
-		padding: $padding;
-	}
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	width: 100%;
+	margin: 0;
 	background-color: $white;
-	.maze {
-		line-height: 0;
-		width: 60px;
-	}
-	h1 {
-		position: relative;
-		top: 0.25em;
-		display: block;
-		width: 90px;
-		flex-grow: 1;
-		margin: 0 0 0 0.5em;
-		font-weight: 200;
-		line-height: 0.8;
-		color: $primary;
-		font-size: 28px;
-		@include respond-to(small) {
-			width: auto;
+	padding: 0;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+	.header-content {
+		max-width: 1000px;
+		margin: 0 auto;
+		display: flex;
+		flex-wrap: nowrap;
+		padding: $padding $padding/2 $padding $padding/2;
+		@include respond-to(tiny) {
+			padding: $padding;
+		}		
+		.maze {
+			line-height: 0;
+			width: 60px;
 		}
-	}
-	p {
-		display: block;
-		width: 100px;
-		margin: 0.75em 0 0 0;
-		padding: 0;
-		color: $primary;
-		line-height: 1.333333;
-		@include respond-to(small) {
-			width: calc(50% - 30px);
+		h1 {
+			position: relative;
+			top: 0.25em;
+			display: block;
+			width: 90px;
+			flex-grow: 1;
+			margin: 0 0 0 0.5em;
+			font-weight: 200;
+			line-height: 0.8;
+			color: $primary;
+			font-size: 28px;
+			@include respond-to(small) {
+				width: auto;
+			}
 		}
-		@include respond-to(medium) {
-			width: 212.5px;
+		p {
+			display: block;
+			width: 100px;
+			margin: 0.75em 0 0 0;
+			padding: 0;
+			color: $primary;
+			line-height: 1.333333;
+			@include respond-to(small) {
+				width: calc(50% - 30px);
+			}
+			@include respond-to(medium) {
+				width: 212.5px;
+			}
 		}
 	}
 }
@@ -153,11 +164,11 @@ p.primary {
 /* content */
 #container {
 	height: 100vh;
-	overflow-x: hidden;
-	overflow-y: auto;
+	padding-top: 120px;
 	perspective: 3px;
 	-webkit-overflow-scrolling: touch;
 }
+
 .row {
 	margin: 0 auto;
 	max-width: 1000px;
@@ -165,6 +176,65 @@ p.primary {
 	height: auto;
 	padding: $padding*0.8 $padding $padding/2 $padding;
 }
+
+.flexslider {
+	position: relative;
+	height: 210px;
+	max-width: 1000px;
+	margin: 0 auto;
+	background-color: $white;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	ul.slides {
+		width: 100%;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		li img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	ul.flex-direction-nav {
+		position: absolute;
+		top: calc(50% - 28px);
+		width: 100%;
+		max-width: 1000px;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+		list-style: none;
+		z-index: 10;
+		li {
+			display: inline-block;
+			margin: $padding/2;
+			font-size: $font-size * 2;
+			opacity: 0;
+			transition: opacity 0.2s ease;
+			&:first-child {
+				float: left;
+			}
+			&:last-child {
+				float:right;
+			}
+			a {
+				color: $white;
+				opacity: 1;
+				transition: opacity 0.2s ease;
+				&:hover {
+					opacity: 0.5;
+					transition: opacity 0.2s ease;
+				}
+			}
+		}
+	}
+	&:hover ul.flex-direction-nav li {
+		opacity: 0;
+		transition: opacity 0.6s ease 0.2s;
+	}			
+}
+
+
 .row.content {
 	height: auto;
 	background-color: $white;

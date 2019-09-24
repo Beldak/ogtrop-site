@@ -1,105 +1,83 @@
 ---
 layout: default
+carousel:
+- image: /images/maze3.jpg
+- image: /images/maze1.jpg
 ---
-<div class="row image maze1">
-</div>
-<!-- {% include video.html %} -->
+<div class="row image last mansion"></div>
 <div class="row content">
 	<div class="columns">
-<section>
-{% include icons/trees.svg %}<h2>Beheer & exploitatie</h2>
-<p>
-Van Ogtrop JL  behartigt de juridische belangen van voornamelijk particuliere landgoederen in Nederland.
-</p>
-<p>
-Wij brengen gezamenlijk met u het juridisch landschap in kaart en analyseren waar kansen liggen of mogelijk bedreigingen bestaan. 
-</p>
-<p>
-Eigenaren en rentmeesters kunnen ons voor specifieke expertise betrekken bij juridische vraagstukken, zowel op het gebied van landgoedbeheer als op het gebied van landgoedexploitatie. 
-</p>
-</section>
-
-<section>
-{% include icons/pen.svg %}<h2>Werkwijze</h2>
-<p>
-In de eerste fase inventariseren en beoordelen we de overeenkomsten waar het landgoed mee te maken heeft. Van vaak historische transportaktes tot pachtovereenkomsten. Van lang geleden gevestigde erfdienstbaarheden tot ooit overeengekomen voorkeursrechten. In veel gevallen is er op landgoederen sprake van een historische samenhang, ook in juridische zin. Het is daarom goed om het gehele juridisch landschap in beeld te hebben om kansen te kunnen zien en benutten.
-</p>
-</section>
-
-<section>
-<div class="medium-hide">&nbsp;</div>
-<p>
-In fase twee analyseren wij geza&shy;menlijk met het landgoed de bestaande kansen en bedreigingen en bepalen we welke koers u op grond daarvan wil varen. Van Ogtrop JL stippelt deze koers vervolgens verder uit door middel van een juridisch actieplan. 
-</p>
-</section>
-
-<section>
-{% include icons/chatbubble.svg %}
-<p class="primary quote">
-“Juridisch beheer verdient een eigen plek in landgoedbeheer. Proactief in plaats van reactief. Zelf kansen creëren en benutten.”
-</p>
-<p class="primary quote">
-“Om succesvol te zijn als adviseur van landgoederen, is een historisch besef onontbeerlijk. Enerzijds van de economisch-juridische inrichting. Anderzijds van bestaande maat&shy;schappelijke en personele verhou&shy;dingen.”
-</p>
-<p>
-Neem gerust vrijblijvend contact op voor een kennismaking. Wellicht kunnen we iets voor u betekenen.
-</p>
-</section>
-
+		<section>
+			{% include icons/trees.svg %}<h2>Beheer & exploitatie</h2>
+			<p>Van Ogtrop JL  behartigt de juridische belangen van voornamelijk particuliere landgoederen in Nederland.</p>
+			<p>Wij brengen gezamenlijk met u het juridisch landschap in kaart en analyseren waar kansen liggen of mogelijk bedreigingen bestaan. </p>
+			<p>Eigenaren en rentmeesters kunnen ons voor specifieke expertise betrekken bij juridische vraagstukken, zowel op het gebied van landgoedbeheer als op het gebied van landgoedexploitatie. </p>
+		</section>
+	
+		<section>
+			{% include icons/pen.svg %}<h2>Werkwijze</h2>
+			<p>In de eerste fase inventariseren en beoordelen we de overeenkomsten waar het landgoed mee te maken heeft. Van vaak historische transportaktes tot pachtovereenkomsten. Van lang geleden gevestigde erfdienstbaarheden tot ooit overeengekomen voorkeursrechten. In veel gevallen is er op landgoederen sprake van een historische samenhang, ook in juridische zin. Het is daarom goed om het gehele juridisch landschap in beeld te hebben om kansen te kunnen zien en benutten.</p>
+		</section>
+		
+		<section>
+			<div class="medium-hide">&nbsp;</div>
+			<p>In fase twee analyseren wij geza&shy;menlijk met het landgoed de bestaande kansen en bedreigingen en bepalen we welke koers u op grond daarvan wil varen. Van Ogtrop JL stippelt deze koers vervolgens verder uit door middel van een juridisch actieplan. </p>
+		</section>
+	
+		<section>
+			{% include icons/chatbubble.svg %}
+			<p class="primary quote">“Juridisch beheer verdient een eigen plek in landgoedbeheer. Proactief in plaats van reactief. Zelf kansen creëren en benutten.”</p>
+			<p class="primary quote">“Om succesvol te zijn als adviseur van landgoederen, is een historisch besef onontbeerlijk. Enerzijds van de economisch-juridische inrichting. Anderzijds van bestaande maat&shy;schappelijke en personele verhou&shy;dingen.”</p>
+		</section>
+	
 	</div> <!-- .columns -->
 </div> <!-- .row.content -->
 
-<div class="row image wedding">
-</div>
-
+{% if page.carousel %}
+  <div class="flexslider">
+    <ul class="slides">
+      {% for slides in page.carousel %}
+      <li>
+        <img src="{{ slides.image }}">
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
+			
 <div class="row content">
 	<div class="columns">
 		
-<section>
-{% include icons/handshake.svg %}<h2>Robin van Ogtrop</h2>
-<p>
-Robin van Ogtrop heeft fiscaal en civiel recht gestudeerd aan de Erasmus Universiteit Rotterdam en de Universiteit van Amsterdam. Robin begon zijn carrière als fiscaal jurist op de internationale vastgoedafdeling van Arthur Andersen en was vanaf 2008 tot 2016 advocaat in de civiele rechtspraktijk in Amsterdam. 
-</p><p>
-Robin heeft in zijn loopbaan hoofdzakelijk commerciële bedrijven van juridisch advies voorzien. Sinds vier jaar heeft Robin zich tevens toegelegd op het verlenen van juridisch advies aan particuliere landgoederen.
-</p>
-</section>
-
-<section>
-<div class="medium-hide">&nbsp;</div>
-<p>
-Juridisch beheer van een landgoed blijft onderbelicht en krijgt in het algemeen weinig aandacht. Men gaat juridisch voornamelijk reactief te werk in plaats van proactief te sturen op kansen. Een goed overzicht van – vaak samenhangende – juridische aspecten van het landgoed ontbreekt veelal. Dat is jammer. Een goede juridische strategie is essentieel voor het zien van mogelijkheden en het verzilveren van kansen
-</p>
-</section>
-
-<section>
-	<div class="medium-hide">&nbsp;</div>
-		<div class="photo">
-			<img src="/images/robinvanogtrop.jpg" alt="Robin van Ogtrop">
-		</div>
-</section>
-
-<section>
-{% include icons/chatbubble.svg %}
-<p class="primary quote">
-“Om onwenselijke wildgroei op landgoederen te voorkomen, kan het geen kwaad om wederzijdse rechten en verplich&shy;tingen nog eens te benoemen. Als daardoor discussies ontstaan, ook goed. Discussies uit de weg gaan heeft geen enkele zin.”
-</p>
-<p class="primary quote">
-“Een landgoed is niet alleen een samenhangend geheel van mensen, bedrijven en gronden, maar ook van overeenkomsten, aktes en afspraken.”
-</p>
-</section>
-
+		<section>
+		{% include icons/handshake.svg %}<h2>Robin van Ogtrop</h2>
+			<p>Robin van Ogtrop heeft fiscaal en civiel recht gestudeerd aan de Erasmus Universiteit Rotterdam en de Universiteit van Amsterdam. Robin begon zijn carrière als fiscaal jurist op de internationale vastgoedafdeling van Arthur Andersen en was vanaf 2008 tot 2016 advocaat in de civiele rechtspraktijk in Amsterdam.</p>
+			<p>Robin heeft in zijn loopbaan hoofdzakelijk commerciële bedrijven van juridisch advies voorzien. Sinds vier jaar heeft Robin zich tevens toegelegd op het verlenen van juridisch advies aan particuliere landgoederen.</p>
+		</section>		
+		<section>
+			<div class="medium-hide">&nbsp;</div>
+				<p>Juridisch beheer van een landgoed blijft onderbelicht en krijgt in het algemeen weinig aandacht. Men gaat juridisch voornamelijk reactief te werk in plaats van proactief te sturen op kansen. Een goed overzicht van – vaak samenhangende – juridische aspecten van het landgoed ontbreekt veelal. Dat is jammer. Een goede juridische strategie is essentieel voor het zien van mogelijkheden en het verzilveren van kansen</p>
+				<p>Neem gerust vrijblijvend contact op voor een kennismaking. Wellicht kunnen we iets voor u betekenen.</p>
+		</section>
+		<section>
+			<div class="medium-hide">&nbsp;</div>
+				<div class="photo">
+					<img src="/images/robinvanogtrop.jpg" alt="Robin van Ogtrop">
+				</div>
+		</section>	
+		<section>
+			{% include icons/chatbubble.svg %}
+			<p class="primary quote">“Om onwenselijke wildgroei op landgoederen te voorkomen, kan het geen kwaad om wederzijdse rechten en verplich&shy;tingen nog eens te benoemen. Als daardoor discussies ontstaan, ook goed. Discussies uit de weg gaan heeft geen enkele zin.”</p>
+			<p class="primary quote">“Een landgoed is niet alleen een samenhangend geheel van mensen, bedrijven en gronden, maar ook van overeenkomsten, aktes en afspraken.”</p>
+		</section>
+		
 	</div> <!-- .columns -->
 </div> <!-- .row.content -->
-
-<div class="row image last mansion">
-</div>
+<div class="row image wedding"></div>
 
 <div class="row content footer">
 	<div class="columns">
-		<section class="medium-hide">&nbsp;
-		</section>
-		<section class="medium-hide">&nbsp;
-		</section>
+		<section class="medium-hide">&nbsp;</section>
+		<section class="medium-hide">&nbsp;</section>
 		<section>
 			{% include icons/door.svg %}<br>
 			<p class="primary">Rembrandtlaan 48<br>
