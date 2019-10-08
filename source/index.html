@@ -1,10 +1,16 @@
 ---
 layout: default
-carousel:
-- image: /images/maze3.jpg
-- image: /images/maze1.jpg
+exploitatie:
+- image: /images/bloemveld.jpg
+- image: /images/boerderij.jpg
+- image: /images/varkens.jpg
+- image: /images/bospad.jpg
+beheer:
+- image: /images/landhuis.jpg
+- image: /images/sloot.jpg
+- image: /images/veld.jpg
 ---
-<div class="row image last mansion"></div>
+<div class="row image maze1"></div>
 <div class="row content">
 	<div class="columns">
 		<section>
@@ -33,10 +39,10 @@ carousel:
 	</div> <!-- .columns -->
 </div> <!-- .row.content -->
 
-{% if page.carousel %}
+{% if page.beheer %}
   <div class="flexslider">
     <ul class="slides">
-      {% for slides in page.carousel %}
+      {% for slides in page.beheer %}
       <li>
         <img src="{{ slides.image }}">
       </li>
@@ -55,13 +61,13 @@ carousel:
 		</section>		
 		<section>
 			<div class="medium-hide">&nbsp;</div>
-				<p>Juridisch beheer van een landgoed blijft onderbelicht en krijgt in het algemeen weinig aandacht. Men gaat juridisch voornamelijk reactief te werk in plaats van proactief te sturen op kansen. Een goed overzicht van – vaak samenhangende – juridische aspecten van het landgoed ontbreekt veelal. Dat is jammer. Een goede juridische strategie is essentieel voor het zien van mogelijkheden en het verzilveren van kansen</p>
+				<p>Juridisch beheer van een landgoed blijft onderbelicht en krijgt in het algemeen weinig aandacht. Men gaat juridisch voornamelijk reactief te werk in plaats van proactief te sturen op kansen. Een goed overzicht van – vaak samenhangende – juridische aspecten van het landgoed ontbreekt veelal. Dat is jammer. Een goede juridische strategie is essentieel voor het zien van mogelijkheden en het verzilveren van kansen.</p>
 				<p>Neem gerust vrijblijvend contact op voor een kennismaking. Wellicht kunnen we iets voor u betekenen.</p>
 		</section>
 		<section>
 			<div class="medium-hide">&nbsp;</div>
 				<div class="photo">
-					<img src="/images/robinvanogtrop.jpg" alt="Robin van Ogtrop">
+					<img src="/images/robin.jpg" alt="Robin van Ogtrop">
 				</div>
 		</section>	
 		<section>
@@ -72,7 +78,17 @@ carousel:
 		
 	</div> <!-- .columns -->
 </div> <!-- .row.content -->
-<div class="row image wedding"></div>
+{% if page.exploitatie %}
+  <div class="flexslider">
+    <ul class="slides">
+      {% for slides in page.exploitatie %}
+      <li>
+        <img src="{{ slides.image }}">
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
 
 <div class="row content footer">
 	<div class="columns">

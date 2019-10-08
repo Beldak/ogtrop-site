@@ -207,7 +207,6 @@ p.primary {
 		z-index: 10;
 		li {
 			display: inline-block;
-			margin: $padding/2;
 			font-size: $font-size * 2;
 			opacity: 0;
 			transition: opacity 0.2s ease;
@@ -218,6 +217,7 @@ p.primary {
 				float:right;
 			}
 			a {
+				padding: $padding/2;
 				color: $white;
 				opacity: 1;
 				transition: opacity 0.2s ease;
@@ -234,6 +234,11 @@ p.primary {
 	}			
 }
 
+.photo {
+	overflow: hidden;
+	max-height: 272px;	
+	margin-bottom: 1.6rem;
+}
 
 .row.content {
 	height: auto;
@@ -287,6 +292,21 @@ p.primary {
 		}
 	}
 }
+
+.flexslider ul.slides {
+	li {
+		width: 100%;
+		left: -50%;
+		@include respond-to(small) {
+			left: 0;
+		}
+		img {
+			height: 100%;
+			width: auto;
+		}
+	}
+}
+
 .row.image {
 	height: 210px;
 	position: relative;
@@ -294,21 +314,8 @@ p.primary {
 	overflow-y: hidden;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: center;
-}
-
-.row.video {
-	height: 210px;
-	position: relative;
-	overflow-x: hidden;
-	overflow-y: hidden;
-}
-#video {
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
+	background-position-x: center;
+	background-position-y: 15%;
 }
 
 .row.footer {
@@ -323,32 +330,6 @@ p.primary {
 		}
 	}
 }
-
-.parallax {
-	&:after {
-		content: " ";
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		height: 100vh;
-		transform: translateZ(-1px) scale(1.5);
-		background-size: 140%;
-		z-index: -1;
-		background-repeat: no-repeat;
-		background-color: $white;
-		@include respond-to(small) {
-			background-size: 120%;
-		}
-	}
-}
-.parallax.last {
-	&:after {
-		transform: translateZ(-1px) translateY(50px) scale(1.5);
-	}
-}
-
 
 .row.image.maze1 { background-image: url('../images/maze1.jpg'); }
 .row.image.maze2 { background-image: url('../images/maze2.jpg'); }
@@ -438,7 +419,6 @@ footer {
   stroke-dasharray: 300;
   stroke-dashoffset: 300;
 }
-
 
 .primary .svgicon {
 	stroke: $primary;
