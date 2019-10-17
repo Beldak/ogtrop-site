@@ -174,7 +174,7 @@ p.primary {
 	max-width: 1000px;
 	position: relative;
 	height: auto;
-	padding: $padding*0.8 $padding $padding/2 $padding;
+	padding: $padding $padding $padding/2 $padding;
 }
 
 .flexslider {
@@ -236,7 +236,7 @@ p.primary {
 
 .photo {
 	overflow: hidden;
-	max-height: 272px;	
+	max-height: 272px;
 	margin-bottom: 1.6rem;
 }
 
@@ -316,6 +316,16 @@ p.primary {
 	background-size: cover;
 	background-position-x: center;
 	background-position-y: 15%;
+	.banner-title {
+		position: absolute;
+		left: 0;
+		bottom: $padding/2;
+		padding: $padding/4 $padding/2 0 $padding;
+		line-height: 1.4;
+		color: $white;
+		background-color: rgba(0,0,0,0.5);
+		font-size: $font-size*2.5;
+	}
 }
 
 .row.footer {
