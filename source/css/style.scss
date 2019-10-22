@@ -321,6 +321,8 @@ p.primary {
 	background-size: cover;
 	background-position-x: center;
 	background-position-y: 28%;
+	background-blend-mode: overlay;
+	background-color: $primary;
 	.red-glow {
 		background-color: $primary;
 		position: absolute;
@@ -330,7 +332,9 @@ p.primary {
 		bottom: 0;
 		left: 0;
 		right: 0;
-			.banner-title {
+
+	}
+		.banner-title {
 			position: absolute;
 			left: 0;
 			text-align: left;
@@ -340,8 +344,6 @@ p.primary {
 			color: $white;
 			font-size: $font-size*2;
 		}
-	}
-
 }
 
 .row.footer {
@@ -357,7 +359,7 @@ p.primary {
 	}
 }
 
-.row.image.maze1 { background-image: url('../images/maze1-highres.jpg'); }
+.row.image.maze1 { background-image: url('../images/maze1-highres-bw.jpg'); }
 .row.image.maze2 { background-image: url('../images/maze2.jpg'); }
 .row.image.maze3 { background-image: url('../images/maze3.jpg'); }
 .row.image.wedding { background-image: url('../images/wedding.jpg'); }
